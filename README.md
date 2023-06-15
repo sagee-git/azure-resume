@@ -20,7 +20,7 @@ const functionApi = ''
 ```
 - Test locally and push changes to GitHub
 
-## Second Step
+## Second Step: Backend
 
 - Setting up the CosmosCoscmos DB resources
 - Setting up an Azure Function
