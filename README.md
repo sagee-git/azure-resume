@@ -1,5 +1,5 @@
 # azure-resume
-My own Azure resume, following [ACG project video.](https://youtu.be/ieYrBWmkfno)
+My own Azure resume, following [ACG project video.](https://youtu.be/ieYrBWmkfno) and the GitHub [cgc-azure-resume-starter](https://github.com/ACloudGuru-Resources/acg-project-azure-resume)
 
 ## Prerequisites
 
