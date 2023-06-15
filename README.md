@@ -18,7 +18,7 @@ My own Azure resume, following [ACG project video.](https://youtu.be/ieYrBWmkfno
 ```js
 const functionApi = ''
 ```
-- Test localloy and push changes to GitHub
+- Test locally and push changes to GitHub
 
 ## Second Step
 
