@@ -25,3 +25,9 @@ const functionApi = ''
 - Setting up the CosmosCoscmos DB resources
 - Setting up an Azure Function
 - Test locally
+
+## Third Step: Deploying to Azure
+
+- Deploy the Azure Function
+- Deploy to Blob Container
+- Setup Azure CDN
