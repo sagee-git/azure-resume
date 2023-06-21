@@ -15,9 +15,9 @@ My own Azure resume, following [ACG project video.](https://youtu.be/ieYrBWmkfno
 - Set up version control.
 - Update the HTML and implement a counter.
 - main.js will contains visitor counter code.
-```js
+<!-- ```js
 const functionApi = ''
-```
+``` -->
 - Test locally and push changes to GitHub
 
 ## Second Step: Backend
@@ -31,3 +31,12 @@ const functionApi = ''
 - Deploy the Azure Function
 - Deploy to Blob Container
 - Setup Azure CDN
+    - Caching
+    - Purging
+    - Purge as part of our CI/CD
+
+## Forth Step: Building a CI/CD Pipeline
+
+- Create a frontend workflow
+- Implement unit testing
+- Create a backend workflow
