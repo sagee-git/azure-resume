@@ -19,13 +19,13 @@ jobs:
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.30.0
+        azcliversion: 2.49.0
         inlineScript: |
             az storage blob upload-batch --account-name azresumest1131 -d '$web' -s frontend/
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.30.0
+        azcliversion: 2.49.0
         inlineScript: |
            az cdn endpoint purge --content-paths  "/*" --profile-name "az-resume-cdn" --name "az-resume-cdn" --resource-group "az-resume-rg1"
 
