@@ -2,9 +2,11 @@
 
 The Frontend contains the HTML, CSS, and JavaScript files to display the Azure Resume counter 
 
-## Format
+- main.js contains the Visitor counter code.
 
-- Font Page Intro
+## Page Format
+
+- Front Page Intro
 
 - Profile Summary
 
