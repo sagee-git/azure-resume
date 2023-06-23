@@ -14,21 +14,22 @@ jobs:
     - uses: actions/checkout@v3
     - uses: azure/login@v1
       with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
+        azcliversion: 2.30.0
         inlineScript: |
-            az storage blob upload-batch --account-name azresumest3693 --auth-mode key -d '$web' -s frontend/
+            az storage blob upload-batch --account-name azresumest1131 -d '$web' -s frontend/
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
+        azcliversion: 2.30.0
         inlineScript: |
-           az cdn endpoint purge --content-paths  "/*" --profile-name "az-resume-cdn" --name "az-resume-cdn" --resource-group "az-resume-rg2"
+           az cdn endpoint purge --content-paths  "/*" --profile-name "az-resume-cdn" --name "az-resume-cdn" --resource-group "az-resume-rg1"
 
   # Azure logout
     - name: logout
       run: |
             az logout
-      if: always()

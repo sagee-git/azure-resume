@@ -2,7 +2,7 @@ name: deploy_backend
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
     - 'backend/**'
         
@@ -14,7 +14,6 @@ env:
 jobs:
   build-and-deploy:
     runs-on: windows-latest
-    environment: dev
     steps:
     - name: 'Checkout GitHub Action'
       uses: actions/checkout@v3
@@ -22,7 +21,7 @@ jobs:
     - name: 'Login via Azure CLI'
       uses: azure/login@v1
       with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Setup DotNet ${{ env.DOTNET_VERSION }} Environment
       uses: actions/setup-dotnet@v3
@@ -32,13 +31,13 @@ jobs:
     - name: 'Resolve Project Dependencies Using Dotnet'
       shell: pwsh
       run: |
-        pushd '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api'
+        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api'
         dotnet build --configuration Release --output ./output
         popd
     - name: 'Run unit test'
       shell: pwsh
       run: |
-        pushd '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/tests'
+        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/tests'
         dotnet test
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
@@ -46,3 +45,4 @@ jobs:
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api/output'
+        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
