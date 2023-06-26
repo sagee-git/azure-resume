@@ -21,7 +21,7 @@ jobs:
       with:
         azcliversion: 2.49.0
         inlineScript: |
-            az storage blob upload-batch --account-name azresumest1131 -d '$web' -s . --overwrite true --auth-mode key
+            az storage blob upload-batch --account-name azresumest1131 -d '$web' -s . --overwrite true
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
